@@ -8,14 +8,15 @@ import glob
 import subprocess
 import traceback
 
-os.environ["GIT_LFS_SKIP_SMUDGE"] = "1"
-
 if sys.argv[0] == 'install.py':
     sys.path.append('.')   # for portable version
 
 COMFY3D_ROOT_ABS_PATH = dirname(__file__)
 BUILD_SCRIPT_ROOT_ABS_PATH = os.path.join(COMFY3D_ROOT_ABS_PATH, "_Pre_Builds/_Build_Scripts")
 sys.path.append(BUILD_SCRIPT_ROOT_ABS_PATH)
+
+os.environ["GIT_LFS_SKIP_SMUDGE"] = "1"
+cstr("GIT_LFS_SKIP_SMUDGE = 1").msg.print()
 
 try:
     from build_utils import (
