@@ -8,6 +8,8 @@ import glob
 import subprocess
 import traceback
 
+os.environ["GIT_LFS_SKIP_SMUDGE"] = "1"
+
 if sys.argv[0] == 'install.py':
     sys.path.append('.')   # for portable version
 
